@@ -18,7 +18,7 @@ static panel(){
 
       <!-- ACTION BUTTONS -->
       <div class="admin-actions">
-        <button class="primary-btn" onclick="UI.navigate('add')">
+        <button class="primary-btn" onclick="window.location.href='admin.html?mode=add'">
           ➕ Add New Pet
         </button>
 
@@ -71,7 +71,7 @@ pets.forEach(p=>{
         <br>
 
         <button class="edit-btn"
-          onclick="event.stopPropagation(); UI.navigate('edit', ${p.id})">
+         onclick="event.stopPropagation();"window.location.href='admin.html?mode=edit&id=${p.id}'"
           ✏ Edit
         </button>
 
