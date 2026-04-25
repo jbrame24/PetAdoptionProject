@@ -15,15 +15,28 @@
 
 <script src="js/storage.js"></script>
 <script src="js/pets.js"></script>
-<script src="js/auth.js"></script>
+<script src="js/upload.js"></script>
+<script src="js/auth.js"></script>   
 <script src="js/admin.js"></script>
 <script src="js/ui.js"></script>
 
 <script>
 window.onload = () => {
-     UI.applyTheme(); 
   UI.updateNavbar();
-  Admin.panel();
+
+  let params = new URLSearchParams(window.location.search);
+  let mode = params.get("mode");
+  let id = params.get("id");
+
+  if(mode === "add"){
+    UI.addForm();
+  }
+  else if(mode === "edit"){
+    UI.addForm(Number(id));
+  }
+  else{
+    Admin.panel();
+  }
 };
 </script>
 
